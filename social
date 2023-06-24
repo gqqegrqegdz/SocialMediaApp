@@ -1,0 +1,22 @@
+class SocialMediaApp:
+    def __init__(self):
+        self.users = []
+
+    def register_user(self, username):
+        self.users.append(username)
+        print(f"User '{username}' registered successfully.")
+
+    def post_message(self, username, message):
+        if username in self.users:
+            print(f"Post from '{username}': {message}")
+        else:
+            print("User is not registered.")
+
+if __name__ == '__main__':
+    social_media_app = SocialMediaApp()
+
+    social_media_app.register_user("User1")
+    social_media_app.register_user("User2")
+
+    social_media_app.post_message("User1", "Hello, world!")
+    social_media_app.post_message("User3", "This is my first post!")
